@@ -1,8 +1,10 @@
 import asyncio
 import random
 import time
+from runner import runner
 
 
+@runner
 async def async_job():
     val_one = await async_task("one", 0.0)
 
@@ -14,6 +16,7 @@ async def async_job():
     return await async_task("three", sum(vals_two))
 
 
+@runner
 async def async_gen_job():
     yield (val_one := await async_task("one", 0.0))
 
@@ -27,6 +30,7 @@ async def async_gen_job():
     yield await async_task("three", sum(vals_two))
 
 
+@runner
 def sync_job():
     val_one = sync_task("one", 0.0)
     vals_two = [
@@ -36,6 +40,7 @@ def sync_job():
     return sync_task("three", sum(vals_two))
 
 
+@runner
 def sync_gen_job():
     yield (val_one := sync_task("one", 0.0))
     yield (

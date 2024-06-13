@@ -1,2 +1,4 @@
 temp.*
 temp
+__pycache__
+*.pyc
