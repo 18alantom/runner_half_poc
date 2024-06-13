@@ -1,4 +1,4 @@
-# Python Job Runner
+### Incomplete ideas for a Python job runner
 
 Given a function which encapsulates a **job**, wherein the contents of the **job** can be regarded as the job's **steps**, a job runner should be able to:
 
